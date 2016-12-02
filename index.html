@@ -16,6 +16,9 @@ $(document).ready(function() {
 	$(".install").click(function() {
 	  $(".install-text").toggle("fast");
 	});
+	$(".sse").click(function() {
+	  $(".sse-text").toggle("fast");
+	});
 	$(".nexus").click(function() {
 	  $(".nexus-text").toggle("fast");
 	});
@@ -91,6 +94,12 @@ $(document).ready(function() {
 					<li>Copy the plugin and archive to your <code>Steam\steamapps\common\Skyrim\Data</code> folder.</li>
 					<li>Enable the plugin with your choice of mod manager.</li>
 				</ol>
+			</div>
+
+			<h3><a id="sse" class="sse" href="#" aria-hidden="true">Can you support the Special Edition? &rsaquo;</a></h3>
+			<div class="sse-text" style="display:none">
+				<p>Not yet due to limited availability.</p>
+				<p></p>
 			</div>
 
 			<h3><a id="nexus" class="nexus" href="#" aria-hidden="true">Can you upload your mods to the Nexus? &rsaquo;</a></h3>
