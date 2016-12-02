@@ -7,6 +7,26 @@
 <link rel="stylesheet" href="stylesheets/styles.css">
 <link rel="stylesheet" href="stylesheets/github-light.css">
 <script src="javascripts/scale.fix.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+	$(".about-me").click(function() {
+	  $(".about-me-text").toggle("fast");
+	});
+	$(".install").click(function() {
+	  $(".install-text").toggle("fast");
+	});
+	$(".nexus").click(function() {
+	  $(".nexus-text").toggle("fast");
+	});
+	$(".rights").click(function() {
+	  $(".rights-text").toggle("fast");
+	});
+	$(".issues").click(function() {
+	  $(".issues-text").toggle("fast");
+	});
+});
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -36,7 +56,6 @@
 
 			<h1 class="header">Other</h1>
 			<ul>
-				<li><a class="buttons github" href="https://github.com/fireundubh/skyrim/issues">Submit Issues/Feedback on GitHub</a></li>
 				<li><a class="buttons github" href="https://github.com/fireundubh/skyrim">View Collection on GitHub</a></li>
 			</ul>
 		</header>
@@ -44,11 +63,58 @@
 			<h1>fireundubh's Skyrim Mods</h1>
 			<p></p>
 
-			<h2><a id="about-me" class="anchor" href="#about-me" aria-hidden="true"></a>Who's fireundubh?</h2>
-			<p>fireundubh is the creator of <em>Master of Disguise</em> for Skyrim, and <em>Auto Loot</em> and <em>Auto Lockpick</em> for Fallout 4.</p>
-			<p>Master of Disguise was featured by <a href="http://www.gamespot.com/videos/top-5-skyrim-mods-of-the-week-become-the-master-of/2300-6423174/">GameSpot</a>, <a href="http://kotaku.com/skyrim-disguises-let-you-walk-around-doing-whatever-1681784966">Kotaku</a>, <a href="https://www.youtube.com/watch?v=ATGNFDgNT-A">Brodual</a>, <a href="https://www.youtube.com/watch?v=69e7xcYw-G4">MxR Mods</a>, and the Skyrim G.E.M.S. Hall of Fame, the #1 Stealth mod on the Steam Workshop and the Skyrim Nexus, and has more than 1 million views on YouTube. Although best known for Master of Disguise, fireundubh has created more than 100 mods for a variety of games, from Duke Nukem 3D to Stellaris.</p>
-			<p>fireundubh contributed to xEdit by working with Zilav to decode Fallout 4 data structures, making possible thousands of mods long before the Creation Kit was released. He was among the first modders to receive a personal invitation from Bethesda Softworks to test the Creation Kit. fireundubh also wrote and edited the <a href="http://www.creationkit.com/fallout4/index.php?title=Papyrus_FAQs">Papyrus FAQs</a> on the Creation Kit Wiki, created the <a href="https://github.com/fireundubh/ultraedit-wordfiles">UltraEdit syntax highlighting definitions for Papyrus and xEdit</a>, and wrote hundreds of xEdit scripts in Delphi, including the popular <a href="https://github.com/fireundubh/xedit">bash tag generator</a> for Fallout 3, Fallout: New Vegas, Oblivion, and Skyrim.</p>
-			<p></p>
+			<h2>Frequently Asked Questions</h2>
+			<h3><a id="about-me" class="about-me" href="#" aria-hidden="true">Who's fireundubh? &rsaquo;</a></h3>
+			<div class="about-me-text" style="display:none">
+				<ul>
+					<li>Created <em>Master of Disguise</em> for Skyrim
+					<li>Created <em>Auto Loot</em> and <em>Auto Lockpick</em> for Fallout 4
+					<li><em>Master of Disguise</em> &mdash; Featured by <a href="http://www.gamespot.com/videos/top-5-skyrim-mods-of-the-week-become-the-master-of/2300-6423174/">GameSpot</a>
+					<li><em>Master of Disguise</em> &mdash; Featured by <a href="http://kotaku.com/skyrim-disguises-let-you-walk-around-doing-whatever-1681784966">Kotaku</a>
+					<li><em>Master of Disguise</em> &mdash; Featured by <a href="https://www.youtube.com/watch?v=ATGNFDgNT-A">Brodual</a>
+					<li><em>Master of Disguise</em> &mdash; Featured by <a href="https://www.youtube.com/watch?v=69e7xcYw-G4">MxR Mods</a>
+					<li><em>Master of Disguise</em> &mdash; #1 in Stealth in the Skyrim G.E.M.S. Hall of Fame (pre-GitHub)
+					<li><em>Master of Disguise</em> &mdash; #1 in Stealth on the Skyrim Nexus (pre-GitHub)
+					<li>Contributed to xEdit and decoded the Fallout 4 plugin data structures
+					<li>Invited by Bethesda Softworks to test the Fallout 4 Creation Kit before the closed beta
+					<li>Wrote and edited the <a href="http://www.creationkit.com/fallout4/index.php?title=Papyrus_FAQs">Fallout 4 Papyrus FAQs</a> on the Creation Kit Wiki
+					<li>Created the <a href="https://github.com/fireundubh/ultraedit-wordfiles">UltraEdit syntax highlighting definitions</a> for Papyrus and xEdit
+					<li>Wrote the <a href="https://github.com/fireundubh/xedit">bash tag generator</a> for Fallout 3, Fallout: New Vegas, Oblivion, and Skyrim
+				</ul>
+				<p></p>
+			</div>
+
+			<h3><a id="install" class="install" href="#" aria-hidden="true">How do I install mods manually? &rsaquo;</a></h3>
+			<div class="install-text" style="display:none">
+				<ol>
+					<li>Download a plugin (<code>.esp</code>) <strong>and</strong> the associated resources archive (<code>.bsa</code>). Note: Not all mods have or need archives.</li>
+					<li>Copy the plugin and archive to your <code>Steam\steamapps\common\Skyrim\Data</code> folder.</li>
+					<li>Enable the plugin with your choice of mod manager.</li>
+				</ol>
+			</div>
+
+			<h3><a id="nexus" class="nexus" href="#" aria-hidden="true">Can you upload your mods to the Nexus? &rsaquo;</a></h3>
+			<div class="nexus-text" style="display:none">
+				<p>No, I removed my mods from the Nexus.</p>
+				<p></p>
+			</div>
+
+			<h3><a id="rights" class="rights" href="#" aria-hidden="true">Can I port your mods to consoles? Or upload your mods anywhere? &rsaquo;</a></h3>
+			<div class="rights-text" style="display:none">
+				<ul>
+					<li>No, you may not port my mods to consoles.</li>
+					<li>No, you may not upload my mods elsewhere.</li>
+					<li>No, you may not include my mods in any compilation.</li>
+					<li>No, you may not alter my mods and pass them off as your own.</li>
+				</ul>
+				<p></p>
+			</div>
+
+			<h3><a id="issues" class="issues" href="#" aria-hidden="true">Where can I submit bug reports, or provide feedback? &rsaquo;</a></h3>
+			<div class="issues-text" style="display:none">
+				<p>I do not accept bug reports or feedback any longer.</p>
+				<p></p>
+			</div>
 
 			<h2><a id="table-of-contents" class="anchor" href="#table-of-contents" aria-hidden="true"></a>Table of Contents</h2>
 			<ol class="three-columns">
