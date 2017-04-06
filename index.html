@@ -6,10 +6,14 @@
 <title>fireundubh&#39;s Skyrim Mods</title>
 <link rel="stylesheet" href="stylesheets/styles.css">
 <link rel="stylesheet" href="stylesheets/github-light.css">
+<link rel="stylesheet" href="stylesheets/custom.css">
 <script src="javascripts/scale.fix.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>
 $(document).ready(function() {
+	$(".roadmap-mod").click(function() {
+	  $(".roadmap-mod-text").toggle("fast");
+	});
 	$(".about-me").click(function() {
 	  $(".about-me-text").toggle("fast");
 	});
@@ -94,6 +98,19 @@ $(document).ready(function() {
 		<section>
 			<h1>fireundubh's Skyrim Mods</h1>
 			<p></p>
+			
+			<h2>Project Updates</h2>
+			<h3><a id="roadmap-mod" class="roadmap-mod" href="#" aria-hidden="true">Roadmap: Master of Disguise for SSE</a></h3>
+			<div class="roadmap-mod-text" style="display:none">
+				<p>Master of Disguise is currently being updated for SSE.</p>
+				<ul>
+					<li><span class="strike">Remove SKSE dependency</span> (April 6, 2017)</li>
+					<li><span class="strike">Implement NoSKSE approach to GetWornForm function in data and Papyrus</span> (April 6, 2017)</li>
+					<li>Show disguise effects in active effects window</li>
+					<li>Re-create as much of the MCM using the vanilla menu system</li>
+				</ul>
+			</div>
+			
 
 			<h2>Frequently Asked Questions</h2>
 			<h3><a id="about-me" class="about-me" href="#" aria-hidden="true">Who's fireundubh? &rsaquo;</a></h3>
