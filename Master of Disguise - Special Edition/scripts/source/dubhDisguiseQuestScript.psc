@@ -36,7 +36,7 @@ GlobalVariable Property iDubhCrimeWinterhold Auto
 ; Quests
 Quest Property JailQuest Auto
 Quest Property EscapeJailQuest Auto
-Quest Property MS02 Auto
+;Quest Property MS02 Auto
 
 ; Player
 Actor Property Player Auto
@@ -50,6 +50,7 @@ Formlist Property dubhBaseFactions Auto
 Formlist Property dubhCrimeFactions Auto
 Formlist Property dubhDisguiseFactions Auto
 Formlist Property dubhDisguiseFormlists Auto
+Formlist Property dubhDisguiseSlots Auto
 Formlist Property dubhExcludedDisguises Auto
 
 ; Messages
@@ -313,16 +314,6 @@ Bool Function CanDisguiseActivate(Int iIndex)
 EndFunction
 
 ; -----------------------------------------------------------------------------
-; Returns TRUE if the Formlist contains the Armor worn in the specified slot
-; -----------------------------------------------------------------------------
-Bool Function ObjHasDisguise(Formlist flstDisguise, Form SlotMask)
-	If flstDisguise.HasForm(SlotMask)
-		Return True
-	EndIf
-	Return False
-EndFunction
-
-; -----------------------------------------------------------------------------
 ; Returns TRUE if the player is in the specified faction
 ; -----------------------------------------------------------------------------
 Bool Function IsMember(Faction factFaction)
@@ -334,78 +325,92 @@ Bool Function IsMember(Faction factFaction)
 	Return False
 EndFunction
 
+Form Function GetWornForm_NoSKSE(Formlist akSlot)
+	Int i = 0
+	While i < akSlot.GetSize()
+		Form kItem = akSlot.GetAt(i)
+		If Player.IsEquipped(kItem)
+			Return kItem
+		EndIf
+		i += 1
+	EndWhile
+	
+	Return None
+EndFunction
+
 ; -----------------------------------------------------------------------------
 ; Returns the Form object for the slot associated with the specified disguise
 ; -----------------------------------------------------------------------------
 Form Function GetSlotMask(Int iIndex)
-	Formlist currentDisguiseFormlist = dubhDisguiseFormlists.GetAt(iIndex) as Formlist
+	Formlist currentDisguise = dubhDisguiseFormlists.GetAt(iIndex) as Formlist
+	Formlist currentDisguiseSlots = dubhDisguiseSlots.GetAt(iIndex) as Formlist
 
 	If iIndex == 1
-		Form curSlotCirc = Player.GetWornForm(0x00001000) as Form ; Circlet
-		If curSlotCirc != None && ObjHasDisguise(currentDisguiseFormlist, curSlotCirc)
-			Return curSlotCirc
+		Form WornForm_7 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(7) as Formlist) as Form ; 7 Circlet
+		If WornForm_7 != None && currentDisguise.HasForm(WornForm_7)
+			Return WornForm_7
 		EndIf
 
 	ElseIf iIndex == 8
-		Form curSlotRing = Player.GetWornForm(0x00000040) as Form ; Ring
-		If curSlotRing != None && ObjHasDisguise(currentDisguiseFormlist, curSlotRing)
-			Return curSlotRing
+		Form WornForm_4 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(4) as Formlist) as Form ; 4 Ring
+		If WornForm_4 != None && currentDisguise.HasForm(WornForm_4)
+			Return WornForm_4
 		EndIf
 
 	ElseIf iIndex == 12
-		Form curSlotAmlt = Player.GetWornForm(0x00000020) as Form ; Amulet
-		If curSlotAmlt != None && ObjHasDisguise(currentDisguiseFormlist, curSlotAmlt)
-			Return curSlotAmlt
+		Form WornForm_3 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(3) as Formlist) as Form ; 3 Amulet
+		If WornForm_3 != None && currentDisguise.HasForm(WornForm_3)
+			Return WornForm_3
 		EndIf
 
 	ElseIf iIndex == 26
-		Form curSlotShld = Player.GetWornForm(0x00000200) as Form ; Shield
-		If curSlotShld != None && ObjHasDisguise(currentDisguiseFormlist, curSlotShld)
-			Return curSlotShld
+		Form WornForm_6 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(6) as Formlist) as Form ; 6 Shield
+		If WornForm_6 != None && currentDisguise.HasForm(WornForm_6)
+			Return WornForm_6
 		EndIf
 
 	ElseIf iIndex == 28
-		Form curSlotBody = Player.GetWornForm(0x00000004) as Form ; Body
-		If curSlotBody != None && ObjHasDisguise(currentDisguiseFormlist, curSlotBody)
-			Return curSlotBody
+		Form WornForm_1 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(1) as Formlist) as Form ; 1 Body
+		If WornForm_1 != None && currentDisguise.HasForm(WornForm_1)
+			Return WornForm_1
 		EndIf
 
-		Form curSlotHand = Player.GetWornForm(0x00000008) as Form ; Hands
-		If curSlotHand != None && ObjHasDisguise(currentDisguiseFormlist, curSlotHand)
-			Return curSlotHand
+		Form WornForm_2 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(2) as Formlist) as Form ; 2 Hands
+		If WornForm_2 != None && currentDisguise.HasForm(WornForm_2)
+			Return WornForm_2
 		EndIf
 
-		Form curSlotFeet = Player.GetWornForm(0x00000080) as Form ; Feet
-		If curSlotFeet != None && ObjHasDisguise(currentDisguiseFormlist, curSlotFeet)
-			Return curSlotFeet
+		Form WornForm_5 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(5) as Formlist) as Form ; 5 Feet
+		If WornForm_5 != None && currentDisguise.HasForm(WornForm_5)
+			Return WornForm_5
 		EndIf
 
-		Form curSlotCirc = Player.GetWornForm(0x00001000) as Form ; Circlet
-		If curSlotCirc != None && ObjHasDisguise(currentDisguiseFormlist, curSlotCirc)
-			Return curSlotCirc
+		Form WornForm_7 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(7) as Formlist) as Form ; 7 Circlet
+		If WornForm_7 != None && currentDisguise.HasForm(WornForm_7)
+			Return WornForm_7
 		EndIf
 
-		Form curSlotShld = Player.GetWornForm(0x00000200) as Form ; Shield
-		If curSlotShld != None && ObjHasDisguise(currentDisguiseFormlist, curSlotShld)
-			Return curSlotShld
+		Form WornForm_6 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(6) as Formlist) as Form ; 6 Shield
+		If WornForm_6 != None && currentDisguise.HasForm(WornForm_6)
+			Return WornForm_6
 		EndIf
 
 		Form curSlotWeapL = Player.GetEquippedWeapon(True) as Form ; Weapon Left
-		If curSlotWeapL != None && ObjHasDisguise(currentDisguiseFormlist, curSlotWeapL)
+		If curSlotWeapL != None && currentDisguise.HasForm(curSlotWeapL)
 			Return curSlotWeapL
 		EndIf
 
 		Form curSlotWeapR = Player.GetEquippedWeapon() as Form ; Weapon Right
-		If curSlotWeapR != None && ObjHasDisguise(currentDisguiseFormlist, curSlotWeapR)
+		If curSlotWeapR != None && currentDisguise.HasForm(curSlotWeapR)
 			Return curSlotWeapR
 		EndIf
 
 	Else
-		Form curSlotBody = Player.GetWornForm(0x00000004) as Form ; Body
+		Form WornForm_1 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(1) as Formlist) as Form ; 1 Body
 		;Log("Evaluating " + DisguiseFormlist[iIndex] + " which is at index " + iIndex)
-		If curSlotBody != None && ObjHasDisguise(currentDisguiseFormlist, curSlotBody)
+		If WornForm_1 != None && currentDisguise.HasForm(WornForm_1)
 			;Log("curSlotBody returning " + curSlotBody)
-			Return curSlotBody
+			Return WornForm_1
 		Else
 			;Log("curSlotBody returning None but actual value is " + curSlotBody)
 			Return None
@@ -417,12 +422,8 @@ EndFunction
 ; Returns True if the Disguise Faction is NOT in the DisguisesDisallowed FLST
 ; -----------------------------------------------------------------------------
 Bool Function IsDisguiseAllowed(Int iIndex)
-	Faction currentDisguiseFaction = dubhDisguiseFactions.GetAt(iIndex) as Faction
-	If dubhExcludedDisguises.HasForm(currentDisguiseFaction)
-		;Log(currentDisguiseFaction + " is in " + DisguisesDisallowed + " and may not be activated")
-		Return False
-	EndIf
-	Return True
+	Faction currentDisguise = dubhDisguiseFactions.GetAt(iIndex) as Faction
+	Return !dubhExcludedDisguises.HasForm(currentDisguise)
 EndFunction
 
 ; -----------------------------------------------------------------------------
@@ -439,16 +440,16 @@ Function UpdateDisguises()
 		Bool currentFactionJoined = FactionJoined[iIndex] as Bool
 		Bool currentDisguiseActivated = DisguiseActivated[iIndex] as Bool
 		Faction currentDisguiseFaction = dubhDisguiseFactions.GetAt(iIndex) as Faction
-		Formlist currentDisguiseFormlist = dubhDisguiseFormlists.GetAt(iIndex) as Formlist
+		Formlist currentDisguise = dubhDisguiseFormlists.GetAt(iIndex) as Formlist
 
 		If !currentFactionJoined && !IsMember(currentDisguiseFaction) && !currentDisguiseActivated
-			If ObjHasDisguise(currentDisguiseFormlist, SlotMask)
-				SaveBounty(iIndex)
+			If currentDisguise.HasForm(SlotMask)
+				;SaveBounty(iIndex)
 				AddDisguise(currentDisguiseFaction)
 			EndIf
 		ElseIf IsMember(currentDisguiseFaction) && currentDisguiseActivated
-			If !ObjHasDisguise(currentDisguiseFormlist, SlotMask) || !IsDisguiseAllowed(iIndex)
-				RestoreBounty(iIndex)
+			If !currentDisguise.HasForm(SlotMask) || !IsDisguiseAllowed(iIndex)
+				;RestoreBounty(iIndex)
 				RemoveDisguise(currentDisguiseFaction)
 			EndIf
 		EndIf
@@ -477,17 +478,14 @@ EndFunction
 ; Determines whether SKSE is installed when the script is initialized
 ; -----------------------------------------------------------------------------
 Event OnInit()
-	Log("--------------------------------------------------------------------------------")
-	Log("Initializing...")
-	Log("--------------------------------------------------------------------------------")
-	CheckForSKSE()
+	GoToState("Active")
 EndEvent
 
 ; -----------------------------------------------------------------------------
 ; Determines whether SKSE is installed when a save is loaded
 ; -----------------------------------------------------------------------------
 Event OnPlayerLoadGame()
-	CheckForSKSE()
+	GoToState("Active")
 EndEvent
 
 ; -----------------------------------------------------------------------------
@@ -517,18 +515,6 @@ EndState
 ; =============================================================================
 ; DEBUG FUNCTIONS
 ; =============================================================================
-
-; -----------------------------------------------------------------------------
-; Determines whether SKSE is installed
-; -----------------------------------------------------------------------------
-Function CheckForSKSE()
-	If SKSE.GetVersionRelease() > 0
-		GoToState("Active")
-	Else
-		Debug.MessageBox("SKSE must be installed for Master of Disguise to work. You can download SKSE at skse.silverlock.org.")
-		GoToState("Dead")
-	EndIf
-EndFunction
 
 ; -----------------------------------------------------------------------------
 ; Displays the tutorial messages once

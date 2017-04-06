@@ -74,7 +74,7 @@ GlobalVariable Property iDubhCrimeWinterhold Auto
 ; Quests
 Quest Property JailQuest Auto
 Quest Property EscapeJailQuest Auto
-Quest Property MS02 Auto
+;Quest Property MS02 Auto
 
 ; Races
 Race Property ArgonianRace Auto
@@ -129,6 +129,7 @@ Formlist Property dubhBaseFactions Auto
 Formlist Property dubhCrimeFactions Auto
 Formlist Property dubhDisguiseFactions Auto
 Formlist Property dubhDisguiseFormlists Auto
+Formlist Property dubhDisguiseSlots Auto
 Formlist Property dubhExcludedDamageSources Auto
 Formlist Property dubhGuardFactions Auto
 
@@ -400,14 +401,22 @@ Bool Function IsMember(Faction factFaction)
 	Return False
 EndFunction
 
-; -----------------------------------------------------------------------------
-; Returns TRUE if the Formlist contains the Armor worn in the specified slot
-; -----------------------------------------------------------------------------
-Bool Function ObjHasDisguise(Formlist flstDisguise, Form SlotMask)
-	If flstDisguise.HasForm(SlotMask)
-		Return True
-	EndIf
-	Return False
+; Disguise Formlist
+; Disguise Slots Formlist 
+; -- Disguise Slot Formlist
+; ----- Disguise Armor Forms for that slot 
+
+Form Function GetWornForm_NoSKSE(Formlist akSlot)
+	Int i = 0
+	While i < akSlot.GetSize()
+		Form kItem = akSlot.GetAt(i)
+		If Player.IsEquipped(kItem)
+			Return kItem
+		EndIf
+		i += 1
+	EndWhile
+	
+	Return None
 EndFunction
 
 ; -----------------------------------------------------------------------------
@@ -415,17 +424,29 @@ EndFunction
 ; -----------------------------------------------------------------------------
 Bool[] Function WhichSlotMasks(Int iIndex)
 	Bool[] bWhichSlotMasks = new Bool[10]
-	Formlist currentDisguiseFormlist = dubhDisguiseFormlists.GetAt(iIndex) as Formlist
-	bWhichSlotMasks[0] = ObjHasDisguise(currentDisguiseFormlist, Player.GetWornForm(0x00000002) as Form) ; 0 Hair
-	bWhichSlotMasks[1] = ObjHasDisguise(currentDisguiseFormlist, Player.GetWornForm(0x00000004) as Form) ; 1 Body
-	bWhichSlotMasks[2] = ObjHasDisguise(currentDisguiseFormlist, Player.GetWornForm(0x00000008) as Form) ; 2 Hands
-	bWhichSlotMasks[3] = ObjHasDisguise(currentDisguiseFormlist, Player.GetWornForm(0x00000020) as Form) ; 3 Amulet
-	bWhichSlotMasks[4] = ObjHasDisguise(currentDisguiseFormlist, Player.GetWornForm(0x00000040) as Form) ; 4 Ring
-	bWhichSlotMasks[5] = ObjHasDisguise(currentDisguiseFormlist, Player.GetWornForm(0x00000080) as Form) ; 5 Feet
-	bWhichSlotMasks[6] = ObjHasDisguise(currentDisguiseFormlist, Player.GetWornForm(0x00000200) as Form) ; 6 Shield
-	bWhichSlotMasks[7] = ObjHasDisguise(currentDisguiseFormlist, Player.GetWornForm(0x00001000) as Form) ; 7 Circlet
-	bWhichSlotMasks[8] = ObjHasDisguise(currentDisguiseFormlist, Player.GetEquippedWeapon(true) as Form) ; 8 Weapon - Left
-	bWhichSlotMasks[9] = ObjHasDisguise(currentDisguiseFormlist, Player.GetEquippedWeapon() as Form)     ; 9 Weapon - Right
+	Formlist currentDisguise = dubhDisguiseFormlists.GetAt(iIndex) as Formlist
+	Formlist currentDisguiseSlots = dubhDisguiseSlots.GetAt(iIndex) as Formlist
+
+	Form WornForm_0 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(0) as Formlist) as Form ; 0 Hair
+	Form WornForm_1 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(1) as Formlist) as Form ; 1 Body
+	Form WornForm_2 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(2) as Formlist) as Form ; 2 Hands
+	Form WornForm_3 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(3) as Formlist) as Form ; 3 Amulet
+	Form WornForm_4 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(4) as Formlist) as Form ; 4 Ring
+	Form WornForm_5 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(5) as Formlist) as Form ; 5 Feet
+	Form WornForm_6 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(6) as Formlist) as Form ; 6 Shield
+	Form WornForm_7 = GetWornForm_NoSKSE(currentDisguiseSlots.GetAt(7) as Formlist) as Form ; 7 Circlet
+	
+	bWhichSlotMasks[0] = currentDisguise.HasForm(WornForm_0) ; 0 Hair
+	bWhichSlotMasks[1] = currentDisguise.HasForm(WornForm_1) ; 1 Body
+	bWhichSlotMasks[2] = currentDisguise.HasForm(WornForm_2) ; 2 Hands
+	bWhichSlotMasks[3] = currentDisguise.HasForm(WornForm_3) ; 3 Amulet
+	bWhichSlotMasks[4] = currentDisguise.HasForm(WornForm_4) ; 4 Ring
+	bWhichSlotMasks[5] = currentDisguise.HasForm(WornForm_5) ; 5 Feet
+	bWhichSlotMasks[6] = currentDisguise.HasForm(WornForm_6) ; 6 Shield
+	bWhichSlotMasks[7] = currentDisguise.HasForm(WornForm_7) ; 7 Circlet
+	bWhichSlotMasks[8] = currentDisguise.HasForm(Player.GetEquippedWeapon(true) as Form) ; 8 Weapon - Left
+	bWhichSlotMasks[9] = currentDisguise.HasForm(Player.GetEquippedWeapon() as Form)     ; 9 Weapon - Right
+	
 	Return bWhichSlotMasks
 EndFunction
 
@@ -1000,7 +1021,7 @@ State Active
 				; player and npc must be in an appropriate disguise/base faction pair
 				If IsDisguiseActive()
 					; restory bounty, if any
-					RestoreBounty(WhichGuardDisguise())
+					;RestoreBounty(WhichGuardDisguise())
 					; try to make the npc hostile
 					If NPC.AddSpell(dubhFactionEnemyAbility)
 						Log("Attached " + dubhFactionEnemyAbility + " to " + NPC + " due to unknown hostility")
@@ -1026,7 +1047,7 @@ State Active
 							; ensure that the actor still has line of sight to the Player
 							If NPC.HasLOS(Player)
 								; restore bounty, if any
-								RestoreBounty(WhichGuardDisguise())
+								;RestoreBounty(WhichGuardDisguise())
 								; try to make the npc hostile
 								If NPC.AddSpell(dubhFactionEnemyAbility)
 									Log("Attached " + dubhFactionEnemyAbility + " to " + NPC + " who won detection roll")
@@ -1061,7 +1082,7 @@ State Active
 	Event OnHit(ObjectReference akAggressor, Form akSource, Projectile akProjectile, Bool abPowerAttack, Bool abSneakAttack, Bool abBashAttack, Bool abHitBlocked)
 		If (akAggressor == Player) && !IsExcludedDamageSource(akSource) && !Player.IsDead() && !NPC.IsDead() && !NPC.IsHostileToActor(Player) && !NPC.HasMagicEffect(dubhFactionEnemyEffect)
 			Log(NPC + " was attacked by " + Player + " with " + akSource)
-			RestoreBounty(WhichGuardDisguise())
+			;RestoreBounty(WhichGuardDisguise())
 			NPC.StartCombat(Player)
 			If NPC.AddSpell(dubhFactionEnemyAbility)
 				Log("Attached " + dubhFactionEnemyAbility + " to " + NPC + " who was hit by " + akAggressor)
