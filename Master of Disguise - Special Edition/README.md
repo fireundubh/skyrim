@@ -2,7 +2,7 @@
 
 ## Overview
 
-Master of Disguise transforms all faction armor into real disguises, alongside an immersive and fully customizable detection system. Suit up as anyone, from a Dark Brotherhood assassin to a rough-and-tumble bandit. Find safety among new allies, or deceive and betray them. Wage war against new enemies, or fire the first shot. You are the Master of Disguise. What will you do?
+Master of Disguise transforms faction armor into real disguisesw with an immersive and fully customizable detection system. Suit up as anyone, from a Dark Brotherhood assassin to a rough-and-tumble bandit. Find safety among new allies, or deceive and betray them. Wage war against new enemies, or fire the first shot. You are the Master of Disguise. What will you do?
 
 ## Accolades
 
@@ -73,6 +73,8 @@ In addition, faction NPCs engaged in combat with other NPCs, except companions, 
 ### SkyUI Mod Configuration Menu
 
 *Only available in the non-SSE version of Skyrim.*
+
+Using the new SkyUI Mod Configuration Menu, the player can adjust nearly every aspect of the discovery system from within the game. The disguise and discovery systems can be toggled independently as well.
 
 ## How to Wear a Disguise
 
