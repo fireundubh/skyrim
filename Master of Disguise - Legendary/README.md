@@ -60,6 +60,50 @@ Line of Sight Penalties:
 
 The player's skill in Sneak or Illusion, behaviors, race, and disguise coverage are combined into a "identity score" that is rolled against a random number between 0 and 99. If the identity score is greater than the random number, the player wins the discovery roll and the NPC will not become hostile.
 
+#### Racial Synergies
+
+Factions in Skyrim respond differently to the many Man, Mer, and Beast races. Master of Disguise takes these biases into account:
+
+Race | Faction | Modifier
+--- | --- | ---
+Imperial | Blades | Bonus
+Dunmer | Cultists | Bonus
+Nord | Cultists | Bonus
+Vampire | Dark Brotherhood | Bonus
+Vampire | Dawnguard | Penalty 
+Breton | Forsworn | Bonus 
+All Others | Forsworn | Penalty 
+Imperial | Imperial Legion | Bonus 
+Orc | Imperial Legion | Bonus 
+Dunmer | Morag Tong | Bonus 
+Imperial | Penitus Oculatus | Bonus 
+Orc | Penitus Oculatus | Bonus
+Nord | Stormcloaks | Bonus
+Altmer | Stormcloaks | Penalty 
+Imperial | Stormcloaks | Penalty 
+Altmer | Thalmor | Bonus
+Bosmer | Thalmor | Bonus
+All Others | Thalmor | Penalty
+Argonian | Thieves Guild | Bonus 
+Khajiit | Thieves Guild | Bonus 
+Vampire | Vigil of Stendarr | Penalty 
+Vampire | Clan Volkihar | Bonus 
+Vampire | Necromancers | Bonus 
+Vampire | Vampires | Bonus
+Nord | Markarth Guard | Bonus
+Breton | Markarth Guard | Penalty 
+Dunmer | Redoran Guard | Bonus 
+Imperial | Solitude Guard | Bonus
+Orc | Solitude Guard | Bonus 
+Nord | Solitude Guard | Penalty 
+Nord | Windhelm Guard | Bonus 
+Altmer | Windhelm Guard | Penalty 
+All | Daedra | Penalty
+Redguard | Alik'r Mercenaries | Bonus 
+All Others | Alik'r Mercenaries | Penalty 
+Altmer | Bandits | Penalty 
+All Others | Bandits | Bonus
+
 ### Leaving Witnesses
 
 If a faction NPC is attacked by the player in disguise, the player will be immediately discovered and attacked. If the NPC is dispatched without any witnesses nearby, the player's disguise will be restored.
