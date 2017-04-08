@@ -60,7 +60,7 @@ The player's skill in Sneak or Illusion, behaviors, race, and disguise coverage 
 
 #### Racial Synergies
 
-Factions in Skyrim respond differently to the many Man, Mer, and Beast races. Master of Disguise takes these biases into account:
+Skyrim factions respond differently to the Man, Mer, and Beast races. Master of Disguise takes those biases into account:
 
 Race | Faction | Modifier
 --- | --- | ---
