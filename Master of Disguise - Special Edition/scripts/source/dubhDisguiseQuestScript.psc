@@ -340,6 +340,7 @@ EndFunction
 
 ; -----------------------------------------------------------------------------
 ; Returns the Form object for the slot associated with the specified disguise
+; This is used to define which slots are essential. iIndex is the faction ID.
 ; -----------------------------------------------------------------------------
 Form Function GetSlotMask(Int iIndex)
 	Formlist currentDisguise = dubhDisguiseFormlists.GetAt(iIndex) as Formlist
