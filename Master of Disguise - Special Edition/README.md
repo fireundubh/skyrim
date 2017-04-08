@@ -10,6 +10,8 @@ Master of Disguise transforms faction armor into real disguises with an immersiv
  - [Featured by Kotaku](http://kotaku.com/skyrim-disguises-let-you-walk-around-doing-whatever-1681784966)
  - [Featured by MxR Mods](https://www.youtube.com/watch?v=69e7xcYw-G4)
  - [Featured by Brodual](https://www.youtube.com/watch?v=ATGNFDgNT-A)
+ - #1 in Stealth in the Skyrim G.E.M.S. Hall of Fame (pre-GitHub)
+ - #1 in Stealth on the Skyrim Nexus (pre-GitHub)
 
 ## Requirements
 
