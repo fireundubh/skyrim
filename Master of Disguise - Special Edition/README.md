@@ -78,6 +78,14 @@ In addition, faction NPCs engaged in combat with other NPCs, except companions, 
 
 Using the new SkyUI Mod Configuration Menu, the player can adjust nearly every aspect of the discovery system from within the game. The disguise and discovery systems can be toggled independently as well.
 
+#### Example: Scoring Menu
+
+![Scoring Menu](http://i.imgur.com/jhZQVRv.jpg)
+
+#### Example: Crime Menu
+
+![Crime Menu](http://i.imgur.com/DiStqBN.jpg)
+
 ## How to Wear a Disguise
 
 To wear most disguises, the player will need to equip faction armor in only the body slot. Some disguises have special base requirements. However, the disguise will be always more effective when complete.
