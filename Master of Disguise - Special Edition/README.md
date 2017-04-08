@@ -20,11 +20,11 @@ Master of Disguise transforms faction armor into real disguises with an immersiv
 
 ### Avoiding Detection
 
-NPCs now have a horizontal front-facing field of view, or cone of vision, that extends outward up to a predetermined distance. We use the fDetectionViewCone game setting, which is changed or dynamically adjusted by some mods, to determine the width of the cone of vision, and we use the amount of light on you to dynamically adjust the distance at which NPCs can recognize you.
+NPCs now have a horizontal front-facing field of view, or cone of vision, that extends outward up to a predetermined distance. The fDetectionViewCone game setting, which is changed or dynamically adjusted by some mods, determines the width of the cone of vision, and the amount of light on the player dynamically adjusts the distances at which NPCs can recognize the player.
 
 Periodically, while the player is within that cone of vision, NPCs may become suspicious. If an NPC becomes suspicious, the player will be notified that "you are being watched" in the top left corner of the screen. The identity of the suspicious NPC will not be revealed; however, the player will have seconds to lose their line of sight, which, in addition to cover, can also be achieved by moving into dark or dimly lit areas of the geography.
 
-If you fail to lose their line of sight, the player and NPC will make dice rolls to determine whether the NPC discovers the player. If the player wins the dice roll, life will go on and nobody will be any wiser. If the player loses the dice roll, combat will begin, but only if the NPC would have been hostile normally. 
+If the player fails to lose their line of sight, the player and NPC will make dice rolls to determine whether the NPC discovers the player. If the player wins the dice roll, life will go on and nobody will be any wiser. If the player loses the dice roll, combat will begin, but only if the NPC would have been hostile normally. 
 
 #### Understanding the NPC Perception Model
 
