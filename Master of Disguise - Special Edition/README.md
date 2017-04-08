@@ -165,4 +165,4 @@ This feature can be toggled from the SkyUI Mod Configuration Menu.
  3. Save and quit the game.
  4. Uninstall Master of Disguise.
 
-Note: Bethesda Softworks does not support uninstalling mods. Loading saves without previously active mods may break the save. Following the steps above offers the best chance at avoiding problems with existing saves.
+**Note:** Bethesda Softworks does not support uninstalling mods. Loading saves without previously active mods may break the save. Following the steps above offers the best chance at avoiding problems with existing saves.
