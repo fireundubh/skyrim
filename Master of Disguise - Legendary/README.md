@@ -6,7 +6,7 @@ Master of Disguise transforms faction armor into real disguises with an immersiv
 
 ## Accolades
 
- - [GameSpot's Top Skyrim Mod of the Week](http://www.gamespot.com/videos/top-5-skyrim-mods-of-the-week-become-the-master-of/2300-6423174/)
+ - [GameSpot's Top Skyrim Mod of the Week](http://www.gamespot.com/videos/top-5-skyrim-mods-of-the-week-become-the-master-of/2300-6423174/) ([@8:11](https://www.youtube.com/watch?v=QZxRm1EcbQ4&t=8m11s))
  - [Featured by Kotaku](http://kotaku.com/skyrim-disguises-let-you-walk-around-doing-whatever-1681784966)
  - [Featured by MxR Mods](https://www.youtube.com/watch?v=69e7xcYw-G4)
  - [Featured by Brodual](https://www.youtube.com/watch?v=ATGNFDgNT-A)
