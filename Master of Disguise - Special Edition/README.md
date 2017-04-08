@@ -22,7 +22,7 @@ Master of Disguise transforms faction armor into real disguises with an immersiv
 
 ### Avoiding Detection
 
-NPCs now have a horizontal front-facing field of view, or cone of vision, that extends outward up to a predetermined distance. The fDetectionViewCone game setting, which is changed or dynamically adjusted by some mods, determines the width of the cone of vision, and the amount of light on the player dynamically adjusts the distances at which NPCs can recognize the player.
+NPCs now have a horizontal front-facing field of view, or cone of vision, that extends outward up to a predetermined distance. The fDetectionViewCone game setting, changed or dynamically adjusted by some mods, determines the width of the cone, and the amount of light on the player adjusts the distances at which NPCs can recognize the player.
 
 Periodically, while the player is within that cone of vision, NPCs may become suspicious. If an NPC becomes suspicious, the player will be notified that "you are being watched" in the top left corner of the screen. The identity of the suspicious NPC will not be revealed; however, the player will have seconds to lose their line of sight, which, in addition to cover, can also be achieved by moving into dark or dimly lit areas of the geography.
 
