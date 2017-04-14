@@ -36,7 +36,7 @@ Field of View Segmentation:
 
  - CLEAR: -15&deg; to 15&deg;
  - DISTORTED: -30&deg; to -15&deg; and 15&deg; to 30&deg;
- - PERIPHERAL: -60&deg; to -30&deg; and 30&deg to 60&deg;
+ - PERIPHERAL: -60&deg; to -30&deg; and 30&deg; to 60&deg;
  - HOSTILE: Region meant to indicate the natural state of the actor. (Ignore.)
 
 Line of Sight Ranges:
