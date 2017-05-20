@@ -5,11 +5,22 @@
     <link href="stylesheets/frameworks.css" media="all" rel="stylesheet"/>
     <link href="stylesheets/github.css" media="all" rel="stylesheet"/>
     <link href="stylesheets/custom.css" media="all" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="javascripts/toc.min.js"></script>
     <title>README: Master of Disguise - Special Edition</title>
 </head>
 
 <body>
-<div id="readme" class="readme blob instapaper_body" style="width:1000px">
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#toc').toc({
+      'selectors': 'h1,h2,h3,h4',
+      'container': 'article'
+    });
+  });
+</script>
+<div id="toc"></div>
+<div id="readme" class="readme blob instapaper_body">
     <article class="markdown-body entry-content" itemprop="text">
         <h1>Master of Disguise - Special Edition</h1>
 
