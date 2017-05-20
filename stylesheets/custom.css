@@ -2,7 +2,7 @@ table tr td {
 	vertical-align:top
 }
 #readme {
-	margin-left: 300px;
+	margin-left: 280px;
 }
 #toc {
 	top: 0px;
@@ -11,9 +11,10 @@ table tr td {
 	position: fixed;
 	background: #333;
 	box-shadow: inset -5px 0 5px 0px #000;
-	width: 300px;
+	width: 280px;
 	padding-top: 20px;
 	color: #fff;
+	overflow-y:auto;
 }
 
 #toc ul {
@@ -37,15 +38,19 @@ table tr td {
 }
 
 #toc .toc-h2 {
-	padding-left: 10px;
+	padding-left: 8px;
 }
 
 #toc .toc-h3 {
-	padding-left: 20px;
+	padding-left: 16px;
 }
 
 #toc .toc-h4 {
-	padding-left: 30px;
+	padding-left: 32px;
+}
+
+#toc .toc-h5 {
+	padding-left: 48px;
 }
 
 #toc .toc-active {

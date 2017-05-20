@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <link href="stylesheets/frameworks.css" media="all" rel="stylesheet"/>
-    <link href="stylesheets/github.css" media="all" rel="stylesheet"/>
-    <link href="stylesheets/custom.css" media="all" rel="stylesheet"/>
+    <link href="stylesheets/frameworks.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/github.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/custom.css" media="all" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="javascripts/toc.min.js"></script>
     <title>README: Master of Disguise - Special Edition</title>
@@ -14,7 +14,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $('#toc').toc({
-      'selectors': 'h1,h2,h3,h4',
+      'selectors': 'h1,h2,h3,h4,h5',
       'container': 'article'
     });
   });
@@ -80,9 +80,9 @@
             wiser. If the player loses the dice roll, combat will begin, but only if the NPC would have been hostile
             normally.</p>
 
-        <h4>Understanding the NPC Perception Model</h4>
+        <h4>NPC Perception Model</h4>
         <p><img src="https://camo.githubusercontent.com/4f00f190d61d56a14b822ebb11f3b8ee8927d257/687474703a2f2f6f6935392e74696e797069632e636f6d2f326e31653569672e6a7067" /></p>
-        <p>Field of View Segmentation:</p>
+        <h5>Field of View Segmentation</h5>
         <ul>
             <li>
                 CLEAR: -15&deg; to 15&deg;
@@ -97,7 +97,7 @@
                 HOSTILE: Region meant to indicate the natural state of the actor. (Ignore.)
             </li>
         </ul>
-        <p>Line of Sight Ranges:</p>
+        <h5>Line of Sight Ranges</h5>
         <ul>
             <li>
                 The ranges 512, 1024, and 2048 are dynamically adjusted by light level.
@@ -112,7 +112,7 @@
                 Default Value: <code>fLOSDistanceMaxBase = 2048.0</code>
             </li>
         </ul>
-        <p>Line of Sight Penalties:</p>
+        <h5>Line of Sight Penalties</h5>
         <ul>
             <li>
                 When rolling for discovery, the player's skill contribution to the dice roll is multiplied by a skill
@@ -446,11 +446,9 @@
         <p>This feature can be toggled from the SkyUI Mod Configuration Menu.</p>
 
         <h2>Faction Relations Overhaul</h2>
+        <h3>Skyrim</h3>
         <table>
             <thead>
-                <tr>
-                    <td colspan="4" style="font-weight:bold; text-align:center">SKYRIM</td>
-                </tr>
                 <tr>
                     <th>Faction</th>
                     <th>Allies/Friends</th>
@@ -623,11 +621,9 @@
                 </tr>
             </tbody>
         </table>
+        <h3>Dawnguard</h3>
         <table>
             <thead>
-                <tr>
-                    <td colspan="4" style="font-weight:bold; text-align:center">DAWNGUARD</td>
-                </tr>
                 <tr>
                     <th>Faction</th>
                     <th>Allies/Friends</th>
@@ -650,11 +646,9 @@
                 </tr>
             </tbody>
         </table>
+        <h3>Dragonborn</h3>
         <table>
             <thead>
-                <tr>
-                    <td colspan="4" style="font-weight:bold; text-align:center">DRAGONBORN</td>
-                </tr>
                 <tr>
                     <th>Faction</th>
                     <th>Allies/Friends</th>
@@ -706,24 +700,9 @@
             </li>
         </ul>
 
-        <h2>Upgrading/Uninstalling</h2>
-        <ol>
-            <li>
-                While in the game, using the SkyUI menu, go to the Debug submenu.
-            </li>
-            <li>
-                Toggle off the disguise and discovery systems.
-            </li>
-            <li>
-                Save and quit the game.
-            </li>
-            <li>
-                Uninstall Master of Disguise.
-            </li>
-        </ol>
-        <p><strong>Note:</strong> Bethesda Softworks does not support uninstalling mods. Loading saves without
-            previously active mods may break the save. Following the steps above offers the best chance at avoiding
-            problems with existing saves.</p>
+        <h2>Uninstalling</h2>
+        <p>Bethesda Softworks does not support uninstalling mods. Loading saves without
+            previously active mods may break those saves.</p>
     </article>
 </div>
 </body>
